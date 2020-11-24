@@ -11,12 +11,12 @@ function setValue (id, value) {
   $(`#${id}`).html(value)
 }
 
-function sumMax (obj, days) {
+function sumMax (data, days) {
   let max
-  if (!obj.max || obj.max > days.length) {
+  if (!data.max || data.max > days.length) {
     max = days.length
   } else {
-    max = obj.max
+    max = data.max
   }
   return max
 }
@@ -29,6 +29,8 @@ function arrayToObject (array) {
   return obj
 }
 
+let days = []
+let data = {}
 chrome.tabs.getSelected(null, async function (tab) {
   const port = chrome.tabs.connect(tab.id)
 
@@ -39,22 +41,22 @@ chrome.tabs.getSelected(null, async function (tab) {
   }
 
   $('#submit').click(async function () {
-    const data = $('#projectForm').serializeArray()
-    const obj = arrayToObject(data)
+    const formData = $('#projectForm').serializeArray()
+    data = arrayToObject(formData)
     const errMsgEle = $('#errMsg')
 
-    if (!obj.start || !obj.end || !obj.mark || !obj.hour) {
+    if (!data.start || !data.end || !data.mark || !data.hour) {
       errMsgEle.text('请填写完整信息再提交')
       return
     }
 
-    if (new Date(obj.start) > new Date(obj.end)) {
+    if (new Date(data.start) > new Date(data.end)) {
       errMsgEle.text('开始时间不能大于结束时间')
       return
     }
 
     errMsgEle.text('')
-    const hourArr = obj.hour.split('-')
+    const hourArr = data.hour.split('-')
     let hour
 
     for (let i = 0; i < hourArr.length; i++) {
@@ -70,12 +72,14 @@ chrome.tabs.getSelected(null, async function (tab) {
       hour = `随机${hourArr[0]}-${hourArr[1]}`
     }
 
-    const days = await sumWorkDays(obj)
-    let max = sumMax(obj, days)
-    setValue('start_at', obj.start)
-    setValue('end_at', obj.end)
-    setValue('stage_val', obj.stage)
-    setValue('mark_val', obj.mark)
+    days = await sumWorkDays(data)
+    const max = sumMax(data, days)
+    days = days.slice(0, max)
+
+    setValue('start_at', data.start)
+    setValue('end_at', data.end)
+    setValue('stage_val', data.stage)
+    setValue('mark_val', data.mark)
     setValue('days', `${max}天`)
     setValue('hour_val', `${hour}小时`)
     $('#conformModal').modal()
@@ -83,11 +87,7 @@ chrome.tabs.getSelected(null, async function (tab) {
 
   $('#confirm').click(async function () {
     $(this).attr('disabled', true)
-    const data = $('#projectForm').serializeArray()
-    const obj = arrayToObject(data)
-    const days = await sumWorkDays(obj)
-
-    port.postMessage({ type: 'submit', data: obj, days })
+    port.postMessage({ type: 'submit', data, days })
   })
 
   port.onMessage.addListener((response) => {

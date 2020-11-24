@@ -84,6 +84,7 @@ async function getData (port) {
 
 async function submit (port, data, days) {
 
+  console.log(days)
   project = Object.assign(project[0], {
     data: [],
     spent_person: username,
