@@ -1,13 +1,13 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
   },
-  "default_locale": "zh",
+  "default_locale": "zh_CN",
   "background": {
     "scripts": [
       "libs/polyfill.min.js",
@@ -16,28 +16,7 @@
     ]
   },
   "permissions": [
-    "activeTab",
-    "tabs",
-    "http://*/*",
-    "https://*/*",
-    "background",
-    "bookmarks",
-    "clipboardRead",
-    "clipboardWrite",
-    "contentSettings",
-    "cookies",
-    "*://*.google.com/",
-    "debugger",
-    "history",
-    "idle",
-    "management",
-    "notifications",
-    "pageCapture",
-    "topSites",
-    "storage",
-    "webNavigation",
-    "webRequest",
-    "webRequestBlocking"
+    "https://redcs.tencent.com/*"
   ],
   "options_ui": {
     "page": "options.html",
