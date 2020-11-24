@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "天途助手",
+    "description": ""
+  },
+  "appDescription": {
+    "message": "天途批量填写工时助手",
+    "description": "The description of the application"
+  }
+}

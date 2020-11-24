@@ -1,0 +1,33 @@
+body {
+  width: 420px;
+  padding: 0;
+}
+
+.title {
+  background: #333;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  position: fixed;
+  width: 100%;
+}
+
+.title img {
+  margin-right: 8px;
+}
+
+.content {
+  padding: 30px;
+  padding-top: 80px;
+}
+
+.init-box {
+  text-align: center;
+}
+
+.init-box .tips, .init-box .loading {
+  display: none;
+  font-size: 18px;
+}

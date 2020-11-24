@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+    <!-- build:css styles/popup-vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+  </head>
+  <body>
+  <div id="app">
+    <div class="title">
+      <image
+        src="data:image/svg+xml;base64,PHN2ZyBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9Ijc4IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgNzggMTgiPjxzdHlsZT4uc3Qwe2ZpbGw6I2ZmZn0uc3Qxe2ZpbGw6IzAwYTNmZn0uc3Qye2ZpbGw6IzAwYzhkY30uc3Qze2ZpbGw6IzAwNmVmZn08L3N0eWxlPjxnIGlkPSJYTUxJRF8yNV8iPjxwYXRoIGlkPSJYTUxJRF8zOF8iIGNsYXNzPSJzdDAiIGQ9Ik01OS4zIDEuN2gtOC45VjNoMi43djQuOGgtMy4ydjEuM2gzLjJWMTdoMS41VjkuMUg1OHY3LjZoMi43di0xLjNoLTEuMlYxLjdoLS4yem0tNC44IDUuOVYzSDU4djQuOGgtMy40di0uMnoiLz48cGF0aCBpZD0iWE1MSURfMTRfIiBjbGFzcz0ic3QwIiBkPSJNMzQuNSAxMy4zaDcuMXYxLjNoLTcuMXoiLz48cGF0aCBpZD0iWE1MSURfMzNfIiBjbGFzcz0ic3QwIiBkPSJNMjkuNiAxMC45YzAgMi4zLS4xIDQuMi0uNiA1LjcgMCAuMSAwIC4xLjEuMWgxLjNjLjUtMi4yLjUtNCAuNS01LjNoMS44djRoLTEuMmMtLjEgMC0uMSAwLS4xLjFsLjQgMS4yaDIuM3YtMTVoLTQuNGwtLjEgOS4yem0xLjQtLjZ2LTNoMS44djMuMkgzMXYtLjJ6TTMyLjggM3YzLjFIMzFWM2gxLjh6Ii8+PHBhdGggaWQ9IlhNTElEXzMwXyIgY2xhc3M9InN0MCIgZD0iTTQyLjEgN2gxLjdWNS44aC01LjFjLjEtLjQuMi0uOS41LTEuMmg0LjRWMy40aC0xLjJjLjEtLjcuNS0xLjYuNS0xLjYgMC0uMSAwLS4xLS4xLS4xaC0xLjFsLS41IDEuN2gtMS42Yy4xLS43LjItMS41LjQtMi4yIDAtLjEgMC0uMS0uMS0uMWgtMS4yYy0uMS45LS4yIDEuNy0uNSAyLjRoLS45bC0uNS0xLjdoLTEuMWMtLjEgMC0uMSAwLS4xLjFzLjIuOS41IDEuNmgtMS4ydjEuMmgyLjhjLS4xLjQtLjIuOS0uNSAxLjJoLTIuN3YxLjJoMi4xYy0uOSAxLjItMS43IDEuNy0yLjEgMnYxLjNjMCAuMS4xLjEuMiAwIC40LS4xLjktLjUgMS4yLS45aDQuOXYxLjhIMzdsLjEtMS4xYzAtLjEgMC0uMS0uMS0uMWgtMS4ybC0uMSAyLjJjMCAuMSAwIC4xLjEuMWg2LjZ2My4yaC0yLjljLS4xIDAtLjEgMC0uMS4xbC40IDEuMkg0NHYtNS42aC0xLjZWOC45Yy42LjUgMS4yIDEgMS44IDEuMi4xLjEuMi4xLjIgMFY4LjhjLS42LS4yLTEuNS0uNy0yLjMtMS44em0tMS42IDBjLjIuNS42IDEgMSAxLjNoLTQuM2MuNC0uNC42LS45IDEtMS4zaDIuM3oiLz48cGF0aCBpZD0iWE1MSURfOF8iIGNsYXNzPSJzdDAiIGQ9Ik01MS4yIDEyLjRsLTIuNCAxLjhWNS44aC0zLjJ2MS41aDEuOHY4LjFjLS41LjQtLjkuNS0uOS41bC45IDEuMSAzLjktMi45LS4xLTEuN2MuMyAwIC4yLS4xIDAgMHoiLz48cGF0aCBpZD0iWE1MSURfN18iIGNsYXNzPSJzdDAiIGQ9Ik00Ny42IDQuNUg0OWMuMiAwIC4yLS4xLjItLjFsLTItMy4xaC0xLjVsLS4xLjFjLjEuMSAyIDMuMSAyIDMuMXoiLz48cGF0aCBpZD0iWE1MSURfNl8iIGNsYXNzPSJzdDAiIGQ9Ik02My42IDJoMTEuMnYxLjVINjMuNnoiLz48cGF0aCBpZD0iWE1MSURfNV8iIGNsYXNzPSJzdDAiIGQ9Ik02Ny43IDguOWg4LjhWNy40SDYydjEuNWg0Yy0uOSAyLjItMi44IDcuNi0yLjkgNy43IDAgLjEgMCAuMS4xLjFoMTIuNWMuMSAwIC4xLS4xLjEtLjFMNzQgMTEuN2gtMS41Yy0uMSAwLS4xLjEtLjEuMSAwIC4xIDEuMyAzLjUgMS4zIDMuNWgtOC4ybDIuMi02LjR6Ii8+PC9nPjxnIGlkPSJYTUxJRF8xOV8iPjxwYXRoIGlkPSJYTUxJRF8yMl8iIGNsYXNzPSJzdDEiIGQ9Ik0yMS41IDE0LjdjLS40LjQtMS4yIDEtMi42IDFoLTguNmMyLjYtMi41IDQuOC00LjYgNS00LjguMi0uMi43LS43IDEuMi0xLjEgMS0uOSAxLjgtMSAyLjUtMSAxIDAgMS44LjQgMi41IDEgMS40IDEuMyAxLjQgMy42IDAgNC45bTEuNy02LjVjLTEtMS4xLTIuNS0xLjgtNC4xLTEuOC0xLjQgMC0yLjYuNS0zLjcgMS4zLS40LjQtMSAuOC0xLjUgMS40LS40LjQtOSA4LjgtOSA4LjguNS4xIDEuMS4xIDEuNi4xaDEwLjljLjggMCAxLjQgMCAyLS4xIDEuMy0uMSAyLjYtLjYgMy43LTEuNiAyLjMtMi4yIDIuMy01LjkuMS04LjF6Ii8+PHBhdGggaWQ9IlhNTElEXzJfIiBjbGFzcz0ic3QyIiBkPSJNOS4yIDcuNkM4LjEgNi44IDcgNi40IDUuNyA2LjRjLTEuNiAwLTMuMS43LTQuMSAxLjgtMi4yIDIuMy0yLjIgNS45LjEgOC4yIDEgLjkgMiAxLjQgMy4yIDEuNWwyLjMtMi4ySDUuOWMtMS4zLS4xLTIuMS0uNS0yLjYtMS0xLjQtMS40LTEuNC0zLjYtLjEtNSAuNy0uNyAxLjUtMSAyLjUtMSAuNiAwIDEuNS4xIDIuNCAxIC40LjQgMS41IDEuMiAxLjkgMS42aC4xbDEuNS0xLjV2LS4xYy0uNy0uNy0xLjgtMS42LTIuNC0yLjEiLz48cGF0aCBpZD0iWE1MSURfMV8iIGNsYXNzPSJzdDMiIGQ9Ik0xOS43IDUuMWMtMS4xLTMtNC01LjEtNy4zLTUuMS0zLjkgMC03IDIuOS03LjYgNi41LjMgMCAuNi0uMSAxLS4xcy45LjEgMS4zLjFjLjUtMi41IDIuNy00LjMgNS4zLTQuMyAyLjIgMCA0LjEgMS4zIDUgMy4yIDAgMCAuMS4xLjEgMCAuNy0uMSAxLjUtLjMgMi4yLS4zIDAgLjEgMCAuMSAwIDAiLz48L2c+PC9zdmc+"></image>
+      天途助手
+    </div>
+
+    <div class="content">
+      <div class="init-box">
+        <div class="tips">
+          请登陆天途系统，进入工时填写页面
+        </div>
+        <div class="loading">
+          正在获取项目信息...
+        </div>
+      </div>
+      <form id="projectForm">
+        <div class="form-group">
+          <label for="order_id">订单编号</label>
+          <input class="form-control form-control-sm" id="order_id" disabled>
+        </div>
+        <div class="form-group">
+          <label for="username">花费人</label>
+          <input class="form-control form-control-sm" id="username" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="start">开始时间 <span class="text-danger">*</span></label>
+          <input type="date" class="form-control form-control-sm" name="start" id="start">
+        </div>
+
+        <div class="form-group">
+          <label for="end">结束时间 <span class="text-danger">*</span></label>
+          <input type="date" class="form-control form-control-sm" name="end" id="end">
+        </div>
+
+        <div class="form-group">
+          <label for="end">最大天数</label>
+          <input type="number" class="form-control form-control-sm" name="max" id="max">
+        </div>
+
+        <div class="form-group">
+          <label for="stage">交付阶段 <span class="text-danger">*</span></label>
+          <select id="stage" class="form-control form-control-sm" name="stage"></select>
+        </div>
+        <div class="form-group">
+          <label for="mark">花费说明 <span class="text-danger">*</span></label>
+          <textarea class="form-control form-control-sm" id="mark" name="mark"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="hour">花费工时 <span class="text-danger">*</span></label>
+          <input type="text" class="form-control form-control-sm" id="hour" name="hour" value="8">
+        </div>
+
+        <p class="form-text text-danger" id="errMsg"></p>
+        <p class="form-text text-success" id="success">提交成功！</p>
+        <button
+          type="button"
+          class="btn btn-primary btn-block"
+          id="submit"
+        >
+          提交
+        </button>
+      </form>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="conformModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">确认提交信息</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-sm table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="100">开始时间</td>
+                    <td id="start_at">--</td>
+                  </tr>
+                  <tr>
+                    <td width="100">结束时间</td>
+                    <td id="end_at">--</td>
+                  </tr>
+                  <tr>
+                    <td width="100">交付阶段</td>
+                    <td id="stage_val">--</td>
+                  </tr>
+                  <tr>
+                    <td width="100">花费说明</td>
+                    <td id="mark_val">--</td>
+                  </tr>
+                  <tr>
+                    <td width="100">上报天数</td>
+                    <td id="days">--</td>
+                  </tr>
+                  <tr>
+                    <td width="100">每天工时</td>
+                    <td id="hour_val">--</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary" id="confirm">确认提交</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- build:js scripts/popup-vendor.js -->
+  <!-- bower:js -->
+  <script src="libs/jquery.slim.min.js"></script>
+  <script src="libs/polyfill.min.js"></script>
+  <script src="libs/popper.min.js"></script>
+  <script src="libs/bootstrap.min.js"></script>
+  <script src="libs/axios.js"></script>
+  <script src="libs/dayjs.min.js"></script>
+  <script src="libs/isoWeek.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js scripts/popup.js -->
+  <script src="scripts/util.js"></script>
+  <script src="scripts/popup.js"></script>
+  <!-- endbuild -->
+  </body>
+</html>
